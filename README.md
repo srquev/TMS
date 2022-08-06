@@ -1,3 +1,17 @@
+TMS | 
+Team Management System is a tool designed to
+boost the team productivity.
+It will help you to manage all the team members update
+just-in-one click.
+
+Key features:
+• Quick Update.
+• Boost Productivity.
+• Generate Updated Report in one click.
+
+
+
+_________________________________________________
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
