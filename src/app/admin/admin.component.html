@@ -1,52 +1,59 @@
-<div class="main-admin">
-    <div class="admin-header">
-        <div class="empDetails">Employee</div>
-        <div class="taskStatus">Task</div>
-        <div class="actionColumn">Action</div>
+<div class="main-admin" *ngIf="!showLoader; else spinner">
+
+    <div class="create-container">
+        <div class="create-box"></div>
     </div>
 
-    <div class="emp-des">
-        <div class="name">Alan Walke dffsdfsdfdsfsdfsdfsdr</div>
-        <div class="tasks">CLICKS</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn" (click)="viewEdit('view')">View</button></div>
-            <div class="edit"><button class="gen-btn" (click)="viewEdit('edit')">Edit</button></div>
-        </div>
-    </div>
 
-    <div class="emp-des">
-        <div class="name">Alan Walker2</div>
-        <div class="tasks">2C-3P-2S</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn">View</button></div>
-            <div class="edit"><button class="gen-btn">Edit</button></div>
-        </div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>
+                    <div class="text-img-container">
+                        <div>Member</div>
+                        <div>
+                            <img 
+                            class="img" 
+                            src="./../../assets/sort-icon.png" 
+                            alt="sort"
+                            (click)="sortAZ()"
+                            >
+                        </div>
+                    </div>
+                </th>
+                <th>Tasks</th>
+                <th>Todo</th>
+                <th>Estimation</th>
+                <th>Action</th>
+            </tr>
+        
+            <tr *ngFor="let emp of employeeNames">
+                <td>{{emp?.name}}</td>
+                <td>{{emp?.task?.length || 'No Task Assigned'}}</td>
+                <td>0</td>
+                <td>NA</td>
+                <td><div class="action-btns">
+                    <div class="view"><button class="gen-btn" (click)="viewEdit(emp,'view')">View</button></div>
+                    <div class="edit"><button class="gen-btn" (click)="viewEdit(emp,'edit')">Edit</button></div>
+                </div></td>
+        
+            </tr>
+        </table>
     </div>
-    
-    <div class="emp-des">
-        <div class="name">Alan Walker3</div>
-        <div class="tasks">2C-3P-2S</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn">View</button></div>
-            <div class="edit"><button class="gen-btn">Edit</button></div>
-        </div>
-    </div>
-
-    <div class="emp-des">
-        <div class="name">Alan Walker4</div>
-        <div class="tasks">2C-3P-2S</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn">View</button></div>
-            <div class="edit"><button class="gen-btn">Edit</button></div>
-        </div>
-    </div>
-    
 </div>
 
-<app-list 
+ <!--ng-templae for below container-->
+ <ng-template #spinner>
+    <app-tms-loader></app-tms-loader>
+</ng-template>
+
+
+<!--child component popup-->
+<app-list-popup 
 [showPopup]="showPopup" 
 [employeeData]="employeeData" 
 [currentEmployeeData]="currentEmployeeData"
 (popupState)="popupState($event)"
 >
-</app-list>
+</app-list-popup>
+

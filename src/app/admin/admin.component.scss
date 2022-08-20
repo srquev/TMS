@@ -1,50 +1,66 @@
 .main-admin{
     border:1px solid #e7e5e5;
-    margin-top: 10px;
-    min-height: 500px;
+    // margin-top: 10px;
+    // max-height: calc(100vh - 70px);
+    // overflow-y: auto;
 }
-.admin-header{
-    border: 1px solid #d5d5d5;
-    display: flex;
-    justify-content: space-between;
-    background: #cee6ef;
-    font-size: 18px;
-    padding: 5px;
-    color: #4a4a4a;
+.table-container{
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
 }
 
-.name{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100px;
+.create-container{
+    min-height: 150px;
+    border: 1px solid rgb(230, 230, 230);
+    margin: 10px 0;;
 }
 
-.actionColumn{
-    padding-right: 10px;
-}
-
-.emp-des{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid #dbdbdb;
-}
 
 .action-btns{
     display: flex;
-    padding-right: 5px;
+    // padding-right: 5px;
 }
 
 .view{
-    padding-right: 10px
+    // padding-right: 10px
 }
 
 .gen-btn{
-    background: #5891a7;
     outline: none;
     border: none;
     padding: 4px 8px;
     color: #fff;
+    cursor: pointer;
+    color: #367a95;
+    background: none;
+    font-size: 16px;
+}
+
+table{width: 100%;}
+
+table{width: 100%;}
+tr:nth-child(odd) {
+    background-color: #eaeff3;
+  }
+
+th{
+    background: #cee6ef;
+    padding: 6px;
+    text-align: left;
+    background: #cee6ef;
+    padding: 6px;
+    text-align: left;
+    color: #363636;
+}
+
+.text-img-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img{
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }

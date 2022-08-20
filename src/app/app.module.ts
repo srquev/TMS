@@ -10,6 +10,7 @@ import { AssignedComponent } from './assigned/assigned.component';
 import { UnassignedComponent } from './unassigned/unassigned.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListComponent } from './admin/list/list.component';
+import { TmsLoaderComponent } from './tms-loader/tms-loader.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListComponent } from './admin/list/list.component';
     AssignedComponent,
     UnassignedComponent,
     DashboardComponent,
-    ListComponent
+    ListComponent,
+    TmsLoaderComponent
   ],
   imports: [
     BrowserModule,

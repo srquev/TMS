@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-list-popup',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
@@ -10,6 +10,7 @@ export class ListComponent implements OnInit, OnChanges {
   @Input() employeeData : any;
   @Input() currentEmployeeData : any;
   @Output() popupState = new EventEmitter<boolean>();
+
 
   constructor() { }
 
