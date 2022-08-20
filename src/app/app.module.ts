@@ -6,11 +6,19 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AssignedComponent } from './assigned/assigned.component';
+import { UnassignedComponent } from './unassigned/unassigned.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListComponent } from './admin/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponent
+    routingComponent,
+    AssignedComponent,
+    UnassignedComponent,
+    DashboardComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

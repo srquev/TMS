@@ -22,9 +22,8 @@ export class AdminComponent implements OnInit {
     })
   }
 
-  viewEdit(actionType:string){
-    console.log(actionType);
-    this.showPopup = true;
-  }
+  viewEdit(actionType:string){this.showPopup = true;}
+  
+  popupState(event: boolean){ this.showPopup = event;}
 
 }

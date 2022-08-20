@@ -7,7 +7,7 @@
 
     <div class="emp-des">
         <div class="name">Alan Walke dffsdfsdfdsfsdfsdfsdr</div>
-        <div class="tasks">2C-3P-2S</div>
+        <div class="tasks">CLICKS</div>
         <div class="action-btns">
             <div class="view"><button class="gen-btn" (click)="viewEdit('view')">View</button></div>
             <div class="edit"><button class="gen-btn" (click)="viewEdit('edit')">Edit</button></div>
@@ -43,44 +43,10 @@
     
 </div>
 
-
-<!-- The Modal -->
-<div id="myModal" class="modal" [ngClass]="{'showModal':showPopup, 'hideModal':!showPopup}">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <div class="emp-name-heading">{{employeeData?.data[1]?.name}}</div>
-        <div class="close" (click)="showPopup =false"> &times;</div>
-        </div>
-
-        <div class="table-container">
-            <table class="table">
-                <tr>
-                    <th>Task</th>
-                    <th>Status</th>
-                    <th>Todo</th>
-                    <th>Estimation</th>
-                </tr>
-
-                <ng-container *ngFor="let task of currentEmployeeData">
-                    <tr>
-                        <td>{{task?.description}}</td>
-                        <td>{{task?.currentStatus}}</td>
-                        <td>{{task?.todo}}</td>
-                        <td>{{task?.estimated}}</td>
-                    </tr>
-                </ng-container>
-            </table>
-        </div>
-
-        <div class="modal-footer">
-            <div class="f-btn-conatiner">
-                <div class="cancel-btn-container"><button class="cancel">Cancel</button></div>
-                <div><button class="okay">Okay</button></div>
-            </div>
-        </div>
-     
-    </div>
-  
-  </div>
+<app-list 
+[showPopup]="showPopup" 
+[employeeData]="employeeData" 
+[currentEmployeeData]="currentEmployeeData"
+(popupState)="popupState($event)"
+>
+</app-list>
