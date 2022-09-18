@@ -1,0 +1,12 @@
+Release Notes - TMS Application
+
+This TMS UI application  will help the lead to mange and view the team status in one shot.
+- Lead will be haviing admin level access.
+- Team members will be having employee level access.
+- Features : Leave Plans Management | Current Task Staus at each level | Tosh Notification Reminder
+
+### version 1.0.0 Sept XX, 2022
+* Application created using Angular CLI with routing.
+
+### version 1.0.1 Sept 19, 2022
+* Components | Tabs | Routing | Services | Interface have been added.
