@@ -217,6 +217,18 @@ Without callback JS cannot react as async.
 
 
 
+HTTP HEADERS
+HTTP headers let the client and the server pass additional information with an HTTP request or response.
+An HTTP header consists of its case-insensitive name followed by a colon (:), then by its value.
+Whitespace before the value is ignored.
+
+
+COOKIES
+As a necessary part of web browsing, HTTP cookies help web developers give you more personal, convenient website visits.
+Cookies let websites remember you, your website logins, shopping carts and more.
+
+
+
 
 
 

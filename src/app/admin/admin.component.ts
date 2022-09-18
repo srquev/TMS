@@ -20,6 +20,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDataSource();
+    this.getLocalDataSource();
   }
 
   getDataSource(){
@@ -66,6 +67,10 @@ export class AdminComponent implements OnInit {
     //   }
     // })
 
+  }
+
+  getLocalDataSource(){
+    this.tmsService.getLocalJSON().subscribe((data: any)=>{console.log(data,'<-- Data')})
   }
 
 }
