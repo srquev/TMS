@@ -3,6 +3,9 @@ npm  8.11.0
 npm install -g @angular/cli
 
 MES : Manufacturing execution system.
+ OP * Pro 3168 x 1440 pixels 513 ppi 
+ 
+ REST | Representational state transfer
 
 -------------------------------------
 ERROR:
@@ -75,3 +78,171 @@ console.log(a) // 99
 }
 
 console.log(a) // 99     | it will change the value of variable a which is present in the globval space.
+
+
+Closure : function along with its lexical scope forms closure. | IT CAB BE USED FOR DATA HIDING.
+MDN Definition: functions bundled together with its surrounding state (lexical environment)
+
+
+function x (){
+	var a = 90;
+	function y (){
+	console.log(a)
+	}
+	a = 999;
+	y();
+}
+z = x();
+
+// 999
+
+>> here when function y was returned it will be returned along with its lexical environment 
+	(variables and mehtods which are present in its lexical env i.e var a)
+
+
+>> when a function is returned from another function they still maintains their lexical scope.
+
+
+function A(){
+	function B(){
+		console.log('function B')
+	}
+	
+	return B;
+}
+
+			OR
+
+funciton A(){
+	return function B(){
+		console.log('function B')
+	}
+}	
+
+------EXAMPLE
+
+
+
+
+
+
+function C(){
+	var c = 10;
+	function B(){
+		var b = 100;
+		return function A(){
+			 console.log('inside function A',b,c)
+		}
+		
+	}
+	
+	return B;
+	
+}
+
+getLastFun = C;
+var result = getLastFun()()
+result();
+console.log(getLastFun,'last function');
+ OUTPUT BELOW
+// inside function A 100 10
+/*
+ 
+	ƒ C(){
+		var c = 10;
+		function B(){
+			var b = 100;
+			return function A(){
+				 console.log('inside function A',b,c)
+			}
+			
+		}
+		
+		return B;
+		
+	} 'last function'
+
+
+*/
+HIGHER ORDER FUNCTION :
+A function which take another function as an argumenr is called higher order function.
+a();
+function a(b){
+	b();
+}
+
+function b(){
+return console.log('I'm passed inside another function');
+}
+
+
+FIRST CLASS FUNCTION : Ability to be used as value.
+
+the ability of function to be useed as value and can be passed as argument in another function and can be returned from other function ika first calss function. 
+
+ANONYMOUS FUNCTIONS
+function (){
+console.log('anonymous function : a function without its name')
+}
+
+FUNCTION STATEMENT | FUNCTION DECALRATION
+function xyz(){
+console.log('this is a statement function aka function declaration')
+}
+
+
+FUNCTION EXPRESSION
+x();
+// uncaught typeError : b is not a function
+var x  =  function abc(){
+console.log('function expression');
+}
+
+>>function expression will not be hoisted.
+
+
+ARROW FUNCTION
+
+
+
+
+
+
+CALLBACK | Callback Hell | Inversion of controles
+
+CALLBACK HELL : A callback function inside another function and again a callback function inside this callback function.
+
+Inversion Of Control : to manintain the avaialability of data.
+Without callback JS cannot react as async.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________________________________________________________________________________
+
+
+
+------------	ANGULAR STARTS HERE
+
+
+Directives : directives are nothing but custom attributes provided by Angular.
+
+
+
+

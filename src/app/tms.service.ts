@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { IEmployee } from './tms-interface';
+import {ITMSEmployeeData, IEmployee} from './interface/employee.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +10,11 @@ export class TMSService {
   
   constructor(private http: HttpClient) { }
 
-getAllEmployees(): Observable<any> {
-  return this.http.get<any>('https://my-json-server.typicode.com/srquev/TMS/db');
+getAllEmployees(): Observable<ITMSEmployeeData> {
+  return this.http.get<ITMSEmployeeData>('https://my-json-server.typicode.com/srquev/TMS/db');
 }
 
-getAllEmployeeNames(): Observable<any> {
-  return this.http.get<any>('https://my-json-server.typicode.com/srquev/user-data/db');
+getAllEmployeeNames(): Observable<IEmployee> {
+  return this.http.get<IEmployee>('https://my-json-server.typicode.com/srquev/user-data/db');
 }
 }

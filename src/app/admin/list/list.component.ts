@@ -7,7 +7,6 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 })
 export class ListComponent implements OnInit, OnChanges {
   @Input() showPopup : any;
-  @Input() employeeData : any;
   @Input() currentEmployeeData : any;
   @Output() popupState = new EventEmitter<boolean>();
 

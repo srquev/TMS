@@ -1,11 +1,43 @@
 <div class="main-admin" *ngIf="!showLoader; else spinner">
 
     <div class="create-container">
-        <div class="create-box"></div>
+        <div class="create-box">
+            <div class="create-employee-text">Employees</div>
+            <div class="new-employee" (click)="showForm()">New Employee +</div>
+        </div>
+        <div *ngIf="displayForm" class="form-container">
+            <div class="form">
+
+                <div class="ip-box-container">
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">SSO</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
+
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">Name</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
+
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">Email</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
+
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">Group By</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
+                    
+                </div>
+
+                
+            </div>
+        </div>
     </div>
 
 
-    <div class="table-container">
+    <div class="table-container" [ngClass]="{'formHeight': displayForm}">
         <table>
             <tr>
                 <th>
@@ -16,7 +48,7 @@
                             class="img" 
                             src="./../../assets/sort-icon.png" 
                             alt="sort"
-                            (click)="sortAZ()"
+                            (click)="sortAZ('name')"
                             >
                         </div>
                     </div>
@@ -51,7 +83,6 @@
 <!--child component popup-->
 <app-list-popup 
 [showPopup]="showPopup" 
-[employeeData]="employeeData" 
 [currentEmployeeData]="currentEmployeeData"
 (popupState)="popupState($event)"
 >

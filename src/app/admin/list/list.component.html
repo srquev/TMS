@@ -4,11 +4,11 @@
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">
-            <div class="emp-name-heading">{{employeeData?.data[1]?.name}}</div>
+            <div class="emp-name-heading">{{currentEmployeeData?.name}}</div>
         <div class="close" (click)="actionBtn('cross')"> &times;</div>
         </div>
 
-        <div class="table-container">
+        <div *ngIf="currentEmployeeData?.task?.length; else noDataFound" class="table-container">
             <table class="table">
                 <tr>
                     <th>Task</th>
@@ -17,17 +17,24 @@
                     <th>Estimation</th>
                 </tr>
 
-                <ng-container *ngFor="let task of currentEmployeeData">
-                    <tr>
-                        <td>{{task?.description}}</td>
-                        <td>{{task?.currentStatus}}</td>
-                        <td>{{task?.todo}}</td>
-                        <td>{{task?.estimated}}</td>
-                    </tr>
-                </ng-container>
+             
+                    <ng-container *ngFor="let task of currentEmployeeData?.task">
+                        <tr>
+                            <td>{{task?.description}}</td>
+                            <td>{{task?.currentStatus}}</td>
+                            <td>{{task?.todo}}</td>
+                            <td>{{task?.estimated}}</td>
+                        </tr>
+                    </ng-container>
+
+
+                  
+          
             </table>
         </div>
 
+      
+           
         <div class="modal-footer">
             <div class="f-btn-conatiner">
                 <div class="cancel-btn-container"><button class="cancel" (click)="actionBtn('cancel')">Cancel</button></div>
@@ -36,4 +43,11 @@
         </div>
      
     </div>
+
+
+    <ng-template #noDataFound>
+        <div class="no-data-found" >
+            <div class="no-data-found-text"><h2>No Data To Display.</h2></div>
+        </div>
+       </ng-template>
 
