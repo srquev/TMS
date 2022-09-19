@@ -258,3 +258,21 @@ Directives : directives are nothing but custom attributes provided by Angular.
 
 
 
+----------- ANGULAR ENDS HERE
+
+
+GENERAL QUESTIONS
+What does closure mean in programming?
+What is a higher-order function in functional programming?
+What are pure and impure functions?
+What is idempotency, and where is it used?
+What is a monad in programming?
+How do you know if a function is composite?
+When is function currying used?
+Which is more responsive, Grid or Flex?
+What are the most popular UI frameworks?
+What are the advantages and disadvantages of using CSS preprocessors?
+
+
+
+
