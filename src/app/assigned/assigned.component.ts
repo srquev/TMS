@@ -15,11 +15,12 @@ import { Component, OnInit } from '@angular/core';
 export class AssignedComponent implements OnInit {
   public tasks = [
     {name:'Why you chose Angular, and the benefits Angular provides.?', isCompleted: false},
-    {name:'Routing', isCompleted: false},
+    {name:'Routing, Array Methods, Problem Solving, Promise, Observable, Subject, Behavor Subjet', isCompleted: false},
     {name:'Interceptors', isCompleted: false},
     {name:'Angular Unit Testing', isCompleted: false},
+    {name:'Angular Application Execution, Architecture, Dependencies, Supporting Files, Build', isCompleted: false},
     {name:'Reactive Froms', isCompleted: false},
-    {name:'Javascript Programs', isCompleted: false},
+    {name:'Javascript Programs, CSS: Positions, Flex-box, Grid, Responsiveness', isCompleted: false},
     {name:'DOM APIS', isCompleted: false},
     {name:'Which software is used for manual testing?', isCompleted: false},
     {name:'What is unit testing, and why is it important?', isCompleted: false},
