@@ -1,0 +1,50 @@
+.employee-tab{
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    height: 600px;
+    border: 1px solid #5396b1;
+    
+}
+
+.in-progress{
+    font-size: 30px;
+    font-family: serif;
+    text-shadow: 0 0 black;
+}
+
+.plg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #5396b1;
+}
+
+.code-paly{
+    padding: 10px 0;
+    font-size: 30px;
+    font-weight: 600;
+    color: #295b70;
+}
+
+// code playground
+
+.parent{position: relative;}
+.child1{border: 1px solid #c8c8c8;}
+.child2{
+    border: 1px solid #c8c8c8;
+    position: absolute;
+    left: 110px;
+}
+
+ol{
+    margin-top: 70px;
+}
+
+li{
+    padding: 4px 0 4px 4cls
+    ypx;
+    background: #f97f7f;
+    color: #000;
+    margin-top: 3px;
+}

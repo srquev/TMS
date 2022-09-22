@@ -1,86 +1,90 @@
-<div class="main-admin">
-    <div class="admin-header">
-        <div class="empDetails">Employee</div>
-        <div class="taskStatus">Task</div>
-        <div class="actionColumn">Action</div>
-    </div>
+<div class="main-admin" *ngIf="!showLoader; else spinner">
 
-    <div class="emp-des">
-        <div class="name">Alan Walke dffsdfsdfdsfsdfsdfsdr</div>
-        <div class="tasks">2C-3P-2S</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn" (click)="viewEdit('view')">View</button></div>
-            <div class="edit"><button class="gen-btn" (click)="viewEdit('edit')">Edit</button></div>
+    <div class="create-container">
+        <div class="create-box">
+            <div class="create-employee-text">Employees</div>
+            <div class="new-employee" (click)="showForm()">New Employee +</div>
         </div>
-    </div>
+        <div *ngIf="displayForm" class="form-container">
+            <div class="form">
 
-    <div class="emp-des">
-        <div class="name">Alan Walker2</div>
-        <div class="tasks">2C-3P-2S</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn">View</button></div>
-            <div class="edit"><button class="gen-btn">Edit</button></div>
-        </div>
-    </div>
-    
-    <div class="emp-des">
-        <div class="name">Alan Walker3</div>
-        <div class="tasks">2C-3P-2S</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn">View</button></div>
-            <div class="edit"><button class="gen-btn">Edit</button></div>
-        </div>
-    </div>
+                <div class="ip-box-container">
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">SSO</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
 
-    <div class="emp-des">
-        <div class="name">Alan Walker4</div>
-        <div class="tasks">2C-3P-2S</div>
-        <div class="action-btns">
-            <div class="view"><button class="gen-btn">View</button></div>
-            <div class="edit"><button class="gen-btn">Edit</button></div>
-        </div>
-    </div>
-    
-</div>
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">Name</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
 
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">Email</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal" [ngClass]="{'showModal':showPopup, 'hideModal':!showPopup}">
+                    <div class="ip-box-div">
+                        <div><label for="ip-box">Group By</label></div>
+                        <div class="input-box"><input id="ip-box" type="text" class="input"></div>
+                    </div>
+                    
+                </div>
 
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <div class="emp-name-heading">{{employeeData?.data[1]?.name}}</div>
-        <div class="close" (click)="showPopup =false"> &times;</div>
-        </div>
-
-        <div class="table-container">
-            <table class="table">
-                <tr>
-                    <th>Task</th>
-                    <th>Status</th>
-                    <th>Todo</th>
-                    <th>Estimation</th>
-                </tr>
-
-                <ng-container *ngFor="let task of currentEmployeeData">
-                    <tr>
-                        <td>{{task?.description}}</td>
-                        <td>{{task?.currentStatus}}</td>
-                        <td>{{task?.todo}}</td>
-                        <td>{{task?.estimated}}</td>
-                    </tr>
-                </ng-container>
-            </table>
-        </div>
-
-        <div class="modal-footer">
-            <div class="f-btn-conatiner">
-                <div class="cancel-btn-container"><button class="cancel">Cancel</button></div>
-                <div><button class="okay">Okay</button></div>
+                
             </div>
         </div>
-     
     </div>
-  
-  </div>
+
+
+    <div class="table-container" [ngClass]="{'formHeight': displayForm}">
+        <table>
+            <tr>
+                <th>
+                    <div class="text-img-container">
+                        <div>Member</div>
+                        <div>
+                            <img 
+                            class="img" 
+                            src="./../../assets/sort-icon.png" 
+                            alt="sort"
+                            (click)="sortAZ('name')"
+                            >
+                        </div>
+                    </div>
+                </th>
+                <th>Tasks</th>
+                <th>Todo</th>
+                <th>Estimation</th>
+                <th>Action</th>
+            </tr>
+        
+            <tr *ngFor="let emp of employeeNames">
+                <td>{{emp?.name}}</td>
+                <td>{{emp?.task?.length || 'No Task Assigned'}}</td>
+                <td>0</td>
+                <td>NA</td>
+                <td><div class="action-btns">
+                    <div class="view"><button class="gen-btn" (click)="viewEdit(emp,'view')">View</button></div>
+                    <div class="edit"><button class="gen-btn" (click)="viewEdit(emp,'edit')">Edit</button></div>
+                </div></td>
+        
+            </tr>
+        </table>
+    </div>
+</div>
+
+ <!--ng-templae for below container-->
+ <ng-template #spinner>
+    <app-tms-loader></app-tms-loader>
+</ng-template>
+
+
+<!--child component popup-->
+<app-list-popup 
+[showPopup]="showPopup" 
+[currentEmployeeData]="currentEmployeeData"
+(popupState)="popupState($event)"
+>
+</app-list-popup>
+

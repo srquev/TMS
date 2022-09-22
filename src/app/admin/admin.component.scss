@@ -1,161 +1,126 @@
 .main-admin{
-    border:1px solid #e7e5e5;
-    margin-top: 10px;
-    min-height: 500px;
+    // border:1px solid #e7e5e5;
+    // margin-top: 10px;
+    // max-height: calc(100vh - 70px);
+    // overflow-y: auto;
 }
-.admin-header{
-    border: 1px solid #d5d5d5;
+.table-container{
+    max-height: calc(100vh - 100px)!important;
+    overflow-y: auto;
+    box-shadow: 6px 4px 11px 0px rgb(88 88 88 / 30%);
+}
+
+.formHeight{
+    max-height: calc(100vh - 170px)!important;
+}
+
+.create-container{
+    padding: 10px 0;
+}
+
+.ip-box-container{
     display: flex;
     justify-content: space-between;
-    background: #cee6ef;
+}
+
+.ip-box-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-box{
+    padding-left: 10px;
+}
+
+.input{
+    padding: 5px 0;
+    border: 1px solid #5891a7;
+    border-radius: 3px;
+}
+
+.form-container{
+    // min-height: 150px;
+    margin-top: 15px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    box-shadow: 4px -4px 11px 0px rgb(88 88 88 / 30%);
+    // border: 1px solid rgb(190, 190, 190);
+    // padding-top:15px;
+}
+
+.form{
+   padding: 15px;
+}
+
+.create-box{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.create-employee-text{
+    font-size: 25px;
+    color: #565656;
+    font-weight: 600;
+    /* letter-spacing: 1px; */
+    font-family: monospace;
+}
+
+.new-employee{
+    background: #4391af;
+    color: #fff;
+    padding: 6px 10px;
     font-size: 18px;
-    padding: 5px;
-    color: #4a4a4a;
-}
-
-.name{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100px;
-}
-
-.actionColumn{
-    padding-right: 10px;
-}
-
-.emp-des{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid #dbdbdb;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .action-btns{
     display: flex;
-    padding-right: 5px;
+    // padding-right: 5px;
 }
 
 .view{
-    padding-right: 10px
+    // padding-right: 10px
 }
 
 .gen-btn{
-    background: #5891a7;
     outline: none;
     border: none;
     padding: 4px 8px;
     color: #fff;
     cursor: pointer;
+    color: #367a95;
+    background: none;
+    font-size: 16px;
 }
 
+table{width: 100%;}
 
-.modal {
-    display: none;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,50%); /* Black w/ opacity */
-  }
-
-  .modal-header{
-    display: flex;
-    justify-content: space-between;
-    background: #cee6ef;
-    padding: 0px 10px;
-    align-items: center;
-    font-size: larger;
-    font-weight: bold;
-    align-items: center;
-    font-size: larger;
-    font-weight: bold;
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    border: 1px solid #888;
-    width: 80%;
-    min-height: 300px;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #5891a7;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .showModal{
-    display: block;
-  }
-  .table-container{
-    width: 95%;
-    margin: auto;
-    padding-top: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-    // height: 400px;
-  }
 table{width: 100%;}
 tr:nth-child(odd) {
-    background-color: #f2f2f2;
+    background-color: #eaeff3;
   }
+
 th{
-    background: #e9edef;
+    background: #cee6ef;
     padding: 6px;
     text-align: left;
-}
-td{
-    padding: 5px;
+    background: #cee6ef;
+    padding: 6px;
     text-align: left;
-    max-width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    color: #363636;
 }
-  table, th, td {
-    border: 1px solid #dce7dc;
-    border-collapse: collapse;
-  }
 
-  .f-btn-conatiner{
+.text-img-container{
     display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px 10px 0;
-  }
-  .okay{
-    background: #5891a7;
-    outline: none;
-    border: none;
-    padding: 8px 10px;
-    color: #fff;
-    cursor: pointer;
-  }
-  .cancel-btn-container{
-    padding-right: 20px;
-  }
-  .cancel{
-    background: grey;
-    outline: none;
-    border: none;
-    padding: 8px 10px;
-    color: #000;
-    cursor: pointer;
-  }
+    justify-content: space-between;
+    align-items: center;
+}
 
-  
+.img{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}

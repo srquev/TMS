@@ -1,14 +1,20 @@
 // :host { margin: 0; }
+.outer{
+  padding: 0 20px;
+}
+
 .tabs-comp-name{
-  display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #5891a7;
+    background: #28586c;
     color: #fff;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 18px;
+    overflow: hidden;
 }
   .active{
-    background-color: #8b969d;
+    background-color: #436b6c;
   }
   
   .tabs{
@@ -20,4 +26,8 @@
     cursor: pointer;
   }
 
-  .app-name{padding-right: 10px;}
+  .tab:hover{
+    background-color: rgb(38, 38, 38);
+  }
+
+  .app-name{padding-right: 20px;}
