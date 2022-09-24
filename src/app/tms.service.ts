@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import {ITMSEmployeeData, IEmployee, IGloss} from './interface/employee.interface'
 import { HttpHeaders } from '@angular/common/http';
@@ -9,9 +9,12 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class TMSService {
   private url = './assets/data/tms-local-data.json'
+  // public tasks$ = new Subject();
+  public tasks$ = new BehaviorSubject({javaScriptTask: null, typeScriptTasks: null})
   // public headers = new Headers({ 'Content-Type': 'application/json' });
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
 getAllEmployees(): Observable<ITMSEmployeeData> {
   return this.http.get<ITMSEmployeeData>('https://my-json-server.typicode.com/srquev/TMS/db');
@@ -42,5 +45,9 @@ let apiUrl: string = 'http://url';
 this.http.get(apiUrl, options);
 
 */
+
+getTasks(data:any){
+  this.tasks$.next({javaScriptTask: data.jsTasks, typeScriptTasks: data.tscTasks})
+}
 
 }
