@@ -4,7 +4,7 @@
         <div><button class="update-btn" (click)="updateQuestion()">Update Questions</button></div>
     </div>
     <div class="angular-javascript" >
-        <div *ngFor="let task of tasks; let idx=index" class="task" [appHighlight] ="'#747474'">
+        <div *ngFor="let task of getData?.javaScriptTask; let idx=index" class="task" [appHighlight] ="'#747474'">
         <div><input [id]="task.name" class="checkbox" class="checkbox" type="checkbox" [checked]="task.isCompleted"></div>
         <div><label class="task-name" [for]="task.name">{{task.name | appendString : 'Question' : idx }}</label></div>
     </div>
@@ -13,7 +13,7 @@
     <div style="padding-top: 10px;">
         <H3 class="topic-name">TypeScript</H3>
     <div class="typescript">
-        <div *ngFor="let scriptTask of typeScripttasks; let i=index" class="task" [appHighlight]="'#28586c'">
+        <div *ngFor="let scriptTask of getData?.typeScriptTasks; let i=index" class="task" [appHighlight]="'#28586c'">
             <div><input [id]="scriptTask.name" class="checkbox" class="checkbox" type="checkbox" [checked]="scriptTask.isCompleted"></div>
             <div><label class="task-name" [for]="scriptTask.name">{{scriptTask.name | appendString : 'TSC Ques' : i}}</label></div>
         </div>

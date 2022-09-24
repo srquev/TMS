@@ -15,12 +15,14 @@ export class AdminComponent implements OnInit {
   public employeeNames :any;
   public displayForm = false;
   public currentEmployeeData: any;
+ 
   // public formHeight: any = 0;
   constructor(private tmsService : TMSService) { }
 
   ngOnInit(): void {
     this.getDataSource();
     this.getLocalDataSource();
+    
   }
 
   getDataSource(){
@@ -72,5 +74,7 @@ export class AdminComponent implements OnInit {
   getLocalDataSource(){
     this.tmsService.getLocalJSON().subscribe((data: any)=>{console.log(data,'<-- Data')})
   }
+
+ 
 
 }
