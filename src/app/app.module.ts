@@ -8,6 +8,7 @@ import { TmsLoaderComponent } from './tms-loader/tms-loader.component';
 import { HighlightDirective } from './highlight.directive';
 import { AppendStringPipe } from './appendString.pipe';
 import { AuthInterceptor } from './auth.interceptor';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthInterceptor } from './auth.interceptor';
       provide:HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
