@@ -1,7 +1,7 @@
 <div class="employee-tab">
-    <H3 class="topic-name">Angular & Javascript</H3>
-    <div class="angular-javascript">
-        <div *ngFor="let task of tasks" class="task">
+    <H3 class="topic-name" >Angular & Javascript</H3>
+    <div class="angular-javascript" >
+        <div *ngFor="let task of tasks" class="task" [appHighlight] ="'red'">
         <div><input [id]="task.name" class="checkbox" class="checkbox" type="checkbox" [checked]="task.isCompleted"></div>
         <div><label class="task-name" [for]="task.name">{{task.name}}</label></div>
     </div>
@@ -10,7 +10,7 @@
     <div style="padding-top: 10px;">
         <H3 class="topic-name">TypeScript</H3>
     <div class="typescript">
-        <div *ngFor="let scriptTask of typeScripttasks" class="task">
+        <div *ngFor="let scriptTask of typeScripttasks" class="task" [appHighlight]="'#28586c'">
             <div><input [id]="scriptTask.name" class="checkbox" class="checkbox" type="checkbox" [checked]="scriptTask.isCompleted"></div>
             <div><label class="task-name" [for]="scriptTask.name">{{scriptTask.name}}</label></div>
         </div>

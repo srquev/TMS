@@ -16,7 +16,7 @@ export class AssignedComponent implements OnInit {
   public tasks = [
     {name:'Why you chose Angular, and the benefits Angular provides.?', isCompleted: false},
     {name:'Routing, Array Methods, Problem Solving, Promise, Observable, Subject, Behavor Subjet', isCompleted: false},
-    {name:'Interceptors', isCompleted: false},
+    {name:'Interceptors, Directives, Route Guard, Pipes', isCompleted: false},
     {name:'Angular Unit Testing', isCompleted: false},
     {name:'Angular Application Execution, Architecture, Dependencies, Supporting Files, Build', isCompleted: false},
     {name:'Reactive Froms', isCompleted: false},

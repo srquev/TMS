@@ -228,6 +228,15 @@ As a necessary part of web browsing, HTTP cookies help web developers give you m
 Cookies let websites remember you, your website logins, shopping carts and more.
 
 
+Fibonacci Series
+for (let i = 1; i <= 10; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+}
+
+
 
 
 
@@ -254,6 +263,14 @@ ________________________________________________________________________________
 
 
 Directives : directives are nothing but custom attributes provided by Angular.
+@Directive({
+  selector: '[appHighlight]'
+})
+TYPES: component, attribute (appearance and behavior), structral (add are remove dom element)
+STEPS:
+#1 create directive using ng g directive highlight.
+#2 Import ElementRef from @angular/core, it will grants direct access to the host DOM
+# write your logic inside highlightDirective class
 
 
 

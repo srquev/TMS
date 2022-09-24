@@ -11,6 +11,7 @@ import { UnassignedComponent } from './unassigned/unassigned.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListComponent } from './admin/list/list.component';
 import { TmsLoaderComponent } from './tms-loader/tms-loader.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TmsLoaderComponent } from './tms-loader/tms-loader.component';
     UnassignedComponent,
     DashboardComponent,
     ListComponent,
-    TmsLoaderComponent
+    TmsLoaderComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
