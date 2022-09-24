@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate {
   constructor(private _router: Router){}
   canActivate(): boolean {
-    const isAdmin = false;
+    const isAdmin = true;
     if(isAdmin){
       return true
     } else {

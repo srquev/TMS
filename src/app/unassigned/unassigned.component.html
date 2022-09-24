@@ -31,5 +31,32 @@
     </ol>
 </div>
 
+<div>
+    <div class="data-binding">Data Binding</div>
+    <div>
+        <strong>String Interpolation: </strong><span>{{inputValue}}</span>
+    </div>
+
+    <div>
+        <strong>Two Way Data Binding</strong>
+        <input 
+        [(ngModel)]="inputValue"
+        type="text" 
+        value="sharique"
+        #templateRefvar 
+        (click)="getValue(templateRefvar)"><i>{{templateRefvar.value}}</i>
+    </div>
+
+    <div>
+        <strong>Property Binding</strong><span [id]="templateRefvar.value" [innerHTML]="textFromModel"></span>
+    </div>
+
+
+    <div>
+        <strong>Event Binding </strong>
+        <button (click)="showAlertPopup()">Alert</button>
+    </div>
+</div>
+
 
 </div>

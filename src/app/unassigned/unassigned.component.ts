@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unassigned.component.scss']
 })
 export class UnassignedComponent implements OnInit {
-
+public inputValue: any;
+public textFromModel = '  Property Binding'
   constructor() { }
 
   ngOnInit(): void {
@@ -908,9 +909,13 @@ export class UnassignedComponent implements OnInit {
   }
 
 
-
+  getValue(templateRef:any){
+    console.log(templateRef.value)
+  }
  
-
+  showAlertPopup(){
+    alert('Welcome to TMS!')
+  }
   
 
 }

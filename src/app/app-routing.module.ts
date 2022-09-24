@@ -28,4 +28,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent = [AdminComponent, EmployeeComponent, AssignedComponent]
+export const routingComponent = [AdminComponent, EmployeeComponent, AssignedComponent,UnassignedComponent]
