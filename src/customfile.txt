@@ -273,6 +273,18 @@ STEPS:
 # write your logic inside highlightDirective class
 
 
+PIPES: Pipes are simple functions to use in template expressions to accept an input value and return a transformed value.
+@Pipe ({ 
+   name: 'Multiplier' 
+})
+
+STEPS:
+Import @Pipe decorator from angular core.
+Implment PipeTransform interface from angular core.
+Use transform method provided by PipeTransform interface
+
+
+
 
 
 ----------- ANGULAR ENDS HERE
