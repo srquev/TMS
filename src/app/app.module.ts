@@ -3,28 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ListComponent } from './admin/list/list.component';
-import { TmsLoaderComponent } from './tms-loader/tms-loader.component';
 import { HighlightDirective } from './highlight.directive';
 import { AppendStringPipe } from './appendString.pipe';
 import { AuthInterceptor } from './auth.interceptor';
 import { AuthGuard } from './auth.guard';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListPopupComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponent,
-    ListComponent,
-    TmsLoaderComponent,
     HighlightDirective,
-    AppendStringPipe
+    AppendStringPipe,
+    ListPopupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
