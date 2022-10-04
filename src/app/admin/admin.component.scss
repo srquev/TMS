@@ -124,3 +124,61 @@ th{
     height: 16px;
     cursor: pointer;
 }
+
+// lodaer css starts.
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .spinner {
+    width: 50px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #265467;
+    --_m:
+      conic-gradient(#0000 10%, #000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    animation: s3 1s infinite linear;
+  }
+  
+  @keyframes s3 {
+    to {
+      transform: rotate(1turn)
+    }
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid rgb(145, 145, 145);
+    padding: 0 0 10px 10px;
+  }
+  
+  
+  .box-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+  }
+  
+  .submit {
+    padding: 6px 20px;
+    color: #fff;
+    background: #315f72;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+// loader css ends.

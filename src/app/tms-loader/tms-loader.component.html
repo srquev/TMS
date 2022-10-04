@@ -1,3 +1,58 @@
-<div class="loader-container">
+<!-- <div class="loader-container">
     <div class="spinner"></div>
+</div> -->
+
+
+<div class="outer">
+    <div class="form-container">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="box-label">
+             <div> Name:</div>
+              <div><input formControlName="name" placeholder="Your name"></div>
+              <ul>
+                <li>Touched: {{myForm.get('name').touched}}</li>
+                <li>Pristine: {{myForm.get('name').pristine}}</li>
+                <li>Dirty: {{myForm.get('name').dirty}}</li>
+            </ul>
+            </div>
+            <div class="box-label">
+              <div>Email:</div>
+               <div> <input formControlName="email" placeholder="Your email"></div>
+               <ul>
+                <li>Touched: {{myForm.get('email').touched}}</li>
+                <li>Pristine: {{myForm.get('email').pristine}}</li>
+                <li>Dirty: {{myForm.get('email').dirty}}</li>
+            </ul>
+            </div>
+            <div class="box-label">
+                <div>Query:</div>
+               <div> <input formControlName="message" placeholder="Query"></div>
+               <ul>
+                <li>Touched: {{myForm.get('message').touched}}</li>
+                <li>Pristine: {{myForm.get('message').pristine}}</li>
+                <li>Dirty: {{myForm.get('message').dirty}}</li>
+            </ul>
+            </div>
+
+            <div class="radio" *ngFor="let gender of genders">
+                <label>
+                  <input type="radio" [value]="gender" formControlName = "gender">{{gender}}</label>
+              </div>
+
+              <!--HOBBIES-->
+              <div formArrayName="hobbies">
+                <h4>Hobbies</h4>
+                <button class="btn btn-default" type="button" (click)="onAddHobby()" >Add Hobby</button>
+      
+                <div class="form-group" *ngFor="let hobbyControl of myForm.get('hobbies')['controls']; let i=index">
+                  <input type="text" class="form-control" [formControlName]="i">
+                </div>
+              </div>
+
+
+              
+            <div style="padding-top:15px;"><button class="submit" type="submit">Send</button></div>
+          </form>
+    </div>
+    <!-- <div>{{myForm| json}}</div> -->
 </div>

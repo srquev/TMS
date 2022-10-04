@@ -1,14 +1,16 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { ITest } from 'src/app/interface/employee.interface';
 
 @Component({
   selector: 'app-list-popup',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit, OnChanges {
+export class ListPopupComponent implements OnInit, OnChanges {
   @Input() showPopup : any;
   @Input() currentEmployeeData : any;
   @Output() popupState = new EventEmitter<boolean>();
+  @Input() objTest : ITest
 
 
   constructor() { }
@@ -26,3 +28,4 @@ export class ListComponent implements OnInit, OnChanges {
   }
 
 }
+

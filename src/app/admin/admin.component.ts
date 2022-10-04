@@ -15,6 +15,7 @@ export class AdminComponent implements OnInit {
   public employeeNames :any;
   public displayForm = false;
   public currentEmployeeData: any;
+
  
   // public formHeight: any = 0;
   constructor(private tmsService : TMSService) { }

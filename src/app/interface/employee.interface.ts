@@ -54,3 +54,5 @@ export interface ITask{
 
     export interface IGloss { glossary: Glossary; }
 
+    export interface ITest { testType: boolean, isFailed: boolean }
+
