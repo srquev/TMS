@@ -20,6 +20,8 @@ const routes: Routes = [
   { path: 'unassigned', component: UnassignedComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'loader', component: TmsLoaderComponent },
+  { path: 'manger', 
+    loadChildren: ()=> import('./tms/tms.module').then((m)=>m.TMSModule) },
   { path: '**', component: AdminComponent }
 ]
 
@@ -28,4 +30,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent = [AdminComponent, EmployeeComponent, AssignedComponent,UnassignedComponent]
+export const routingComponent = [AdminComponent, EmployeeComponent, AssignedComponent,UnassignedComponent,TmsLoaderComponent]

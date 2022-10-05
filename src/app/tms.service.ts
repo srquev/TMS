@@ -31,6 +31,7 @@ getLocalJSON(): Observable<IGloss> {
   'tokens': 'token token token'
 });
   headers = headers.set('h1', 'v1').set('h2','v2')
+  headers = headers.set('h8', 'v8')
   return this.http.get<IGloss>(this.url, {headers: headers});
 }
 
