@@ -35,12 +35,30 @@
     border: 1px solid #888;
     width: 80%;
   }
+
+  .btn-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   /* The Close Button */
   .close {
     color: #aaaaaa;
     font-size: 35px;
     font-weight: bold;
+  }
+
+  .update-btn{
+    padding: 2px 4px;
+    outline: none;
+    border: noe;
+    border: none;
+    background: none;
+    color: #2b4980;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
   }
   
   .close:hover,

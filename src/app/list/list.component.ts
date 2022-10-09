@@ -27,5 +27,14 @@ export class ListPopupComponent implements OnInit, OnChanges {
     this.popupState.emit(false)
   }
 
+  updateData(){
+    console.log(this.currentEmployeeData,'currentEmployeeData');
+    this.currentEmployeeData.name = 'Adams Collegue'
+  }
+
+  ngDoCheck(){
+    // console.log(this.cd.markForCheck())
+  }
+
 }
 

@@ -1,27 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
 import { TMSService } from '../tms.service';
-// import { forkJoin } from 'rxjs/observable/forkJoin';
+import {cloneDeep} from 'lodash'
+import { ListPopupComponent } from '../list/list.component';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit, AfterViewInit {
   public showPopup = false;
   public employeeaTask: any;
   public showLoader = false;
   public employeeNames: any;
   public displayForm = false;
   public currentEmployeeData: any;
+  public initialEmployeeList = [];
+  @ViewChild(ListPopupComponent) popup: ListPopupComponent;
+  @ViewChild('popupRef', {static:false}) popupRef:ElementRef
 
 
-  constructor(private tmsService: TMSService) { }
+  constructor(private tmsService: TMSService, private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.getDataSource();
     this.getLocalDataSource();
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.popup)
+   
+    setTimeout(()=>{
+      const heading = document.getElementsByClassName('create-employee-text')[0]
+      console.log(heading)
+      console.log(this.popupRef)
+    },2000)
   }
 
 
@@ -59,11 +74,13 @@ export class AdminComponent implements OnInit {
 
 /** @param keyName is an employee name */
   sortAZ(keyName: string) {
+    this.initialEmployeeList = cloneDeep(this.employeeNames)
     this.employeeNames = this.employeeNames.sort(function (a: any, b: any) {
       if (a[keyName] < b[keyName]) { return -1; }
       if (a[keyName] > b[keyName]) { return 1; }
       return 0;
     })
+   
   }
 
   
@@ -77,6 +94,11 @@ export class AdminComponent implements OnInit {
     this.tmsService.getLocalJSON().subscribe((data: any) => { console.log(data, '<-- Data') })
   }
 
-
+  /*  
+   * *ngDoCheck will always detect changes in its component and associated child components. 
+   */
+  ngDoCheck(){
+    // this.cd.markForCheck()
+  }
 
 }

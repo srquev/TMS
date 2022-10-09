@@ -6,6 +6,10 @@ MES : Manufacturing execution system.
  OP * Pro 3168 x 1440 pixels 513 ppi 
  
  REST | Representational state transfer
+ECMA : European Computer Manufacturers Association Script
+is a scripting language based on JavaScript.
+
+ES6 is a new standardized version of javascript that was released in 2015. It is also known as ECMAScript 2015
 
 -------------------------------------
 ERROR:
@@ -24,21 +28,23 @@ https://my-json-server.typicode.com/<your-username>/<your-repo>
 
 Hoisting : the availability/access of a variable even before the execution of the program.
 
-lexical scope: where a variable is physically present.
-scope chain :  chain of all lexical environment with its parent references.   lexical scope of GEC is null.
+LEXICAL SCOPE
+where a variable is physically present.
+
+SCOPE CHAIN
+chain of all lexical environment with its parent references. lexical scope of GEC is null.
 the whole chain of lexical environment is called the scope chain.
 
-lexical environment : local memory + reference to the lexical env of parent(lexical parent)
+LEXICAL ENVIRONMENT : local memory + reference to the lexical env of parent(lexical parent)
 
-
-a function A which is enclosed inside another function B, then function is the closure of function A.
 
 Temporal Deadzone: is the time since when this let variable was hoisted and till it is intialized some value.
 OR from hoisting till it got some value that time is called temporal dead zone.
 until the js engine reaches to the to the line where a value is assigned to the let/const variables.
 
 
-const : for const keyword you must have to initialize it (assign some value) at the time of declaration. 
+CONST: 
+for const keyword you must have to initialize it (assign some value) at the time of declaration. 
 while assigning different value to const variable it will thorow TypeError : assignemt to const variable.
 you cannot left const as (const b | no assignemnt) it will throw SytaxError.
 
@@ -49,7 +55,8 @@ let a = 10;
 let a = 20;
  it will throw syntax error : identifier a has already been decalred.
  
- Block : block is group of multipl statements  and it can be used where javascript expect single statement.
+BLOCK
+block is A group of multiple statements  and it can be used where javascript expect single statement.
  one statement means one line of code.
  
  eg.
@@ -61,7 +68,8 @@ let a = 20;
  }
  
  
- Block Scope : what all are the variable and functions we can access inside a block is know as the block scope of
+BLOCK SCOPE
+what all are the variable and functions we can access inside a block is know as the block scope of
 				those varibale and funcitons.
 				
 				block scrope varibales are stored in separate memory space 
@@ -80,8 +88,10 @@ console.log(a) // 99
 console.log(a) // 99     | it will change the value of variable a which is present in the globval space.
 
 
-Closure : function along with its lexical scope forms closure. | IT CAB BE USED FOR DATA HIDING.
-MDN Definition: functions bundled together with its surrounding state (lexical environment)
+CLOSURE 
+a function along with its lexical scope forms closure. | IT CAB BE USED FOR DATA HIDING.
+MDN Definition: functions bundled together with its surrounding state (lexical environment).
+A closure is a function that preserves the outer scope in its inner scope.
 
 
 function x (){
@@ -227,6 +237,57 @@ COOKIES
 As a necessary part of web browsing, HTTP cookies help web developers give you more personal, convenient website visits.
 Cookies let websites remember you, your website logins, shopping carts and more.
 
+HIGHER ORDER FUNCTIONS
+Higher-order functions are functions that operate on other functions by taking them as arguments or returning them.
+
+
+MEMOIZATION
+Memoization is a technique for speeding up applications by caching the results of expensive function calls and returning them when the same inputs are used again.
+Expensive Function Calls: Time and memory are the two most important resources in computer applications. As a result, an expensive function call is one that consumes large amounts of these two resources due to extensive calculation during execution.
+Cache: A cache is just a temporary data store that stores data in order to serve future requests for that data more quickly.
+
+JENKINS
+is a platform for creating a Continuous Integration/Continuous Delivery (CI/CD) environment.
+The system offers many different tools, languages, and automation tasks to aid in pipeline creation when developing and deploying programs.
+
+DOCKER
+is a software platform that allows you to build, test, and deploy applications quickly.
+Docker packages software into standardized units called containers that have 
+everything the software needs to run including libraries, system tools, code, and runtime.
+Using Docker, you can quickly deploy and scale applications into any environment and know your code will run.
+
+
+
+JavaScript supports FIRST CLASS FUNCTIONS
+To say that JavaScript treats functions as first class citizens is to say that you can pass functions as parameters to other functions as a common argument
+
+DESIGN PATTERNS
+Design patterns are commonly used solutions to common software development problems.
+Design patterns are reusable solutions for common problems that occur during software development.
+
+
+DESIGN PATTERNS CATEGORIES
+1-Creational design patterns
+2-Structural design patterns
+3-Behavioral design patterns
+4-Concurrency design patterns
+5-Architectural design patterns
+
+
+DESIGNE PATTERNS TYPE
+1. Constructor Pattern
+2. Module Pattern
+3. Revealing Module Pattern
+4. Singleton Pattern
+5. Observer Pattern
+6. Mediator Pattern
+7. Prototype Pattern
+8. Command Pattern
+
+
+AGILE
+The Agile methodology is a way to manage a project by breaking it up into several phases.
+
 
 Fibonacci Series
 for (let i = 1; i <= 10; i++) {
@@ -283,11 +344,50 @@ Import @Pipe decorator from angular core.
 Implment PipeTransform interface from angular core.
 Use transform method provided by PipeTransform interface
 
+ANGULAR.JSON
+A file named angular.json at the root level of an Angular workspace provides workspace-wide and project-specific configuration 
+defaults for build and development tools provided by the Angular CLI. Path values given in the configuration are relative to 
+the root workspace folder.
 
+Steps that can help us significantly alleviate the performance
+Using AoT Compilation. ...
+Using OnPush Change Detection Strategy. ...
+Using Pure Pipes. ...
+Unsubscribe from Observables. ...
+Lazy Loading. ...
+Use trackBy option for For Loop. ...
+Avoid computation in template files. ...
+Usage of Web Workers.
 
+TREE SHAKING
+Tree shaking is a step in a BUILD PROCESS that removes unused code so the application becomes smaller. 
+It can be visualised as shaking a physical tree causing dead branches and leaves to fall off.
 
+|| OR 
+When we import and export modules in JavaScript, most of the time there is unused code floating around.
+Excluding that unused code (also referred as dead code) is called tree shaking.
+
+@Injectable({
+  providedIn: 'root'
+})
+ Above syntax registers it to the root injector which will make our service an application wide singleton.
+
+ Tools like webpack will detect dead code and mark it as “unused module” but it won’t remove the code. Webpack relies on minifiers to cleanup dead code,
+ one of them is UglifyJS plugin, which will eliminate the dead code from the bundle.
+
+ Note: Tree Shaking and it dose not require any special changes in application level.
 
 ----------- ANGULAR ENDS HERE
+
+
+****************************************************************************************************************
+ANGULAR UNIT TESTING:
+cODE COVERAGE: how much code you're testing.
+ng test --no-watch --code-coverage
+
+Jasmine is a behavior-driven development framework for testing JavaScript code.
+Complete ng testing in day time: take help from office projects testing.
+****************************************************************************************************************
 
 
 GENERAL QUESTIONS
@@ -301,7 +401,6 @@ When is function currying used?
 Which is more responsive, Grid or Flex?
 What are the most popular UI frameworks?
 What are the advantages and disadvantages of using CSS preprocessors?
-
 
 
 

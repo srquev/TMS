@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnChanges, OnInit } from '@angular/core';
 import { TMSService } from './tms.service';
 
 @Component({
@@ -42,15 +42,23 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges{
   ]
   
 
-  constructor(private tms:TMSService){console.log('constructor')}
+  constructor(private tms:TMSService, private elRef: ElementRef){console.log('constructor')}
 
   ngOnInit(){
     console.log('ngOnInit')
     this.sendTasks()
   }
 
+
   ngAfterViewInit(){
     console.log('ngAfterViewInit')
+    const observer = new MutationObserver((mutations)=>{
+      mutations.forEach( item=> {console.log(item)})
+    })
+
+    var config = {attributes: true, childList: true, characterData: true}
+    observer.observe(this.elRef.nativeElement, config)
+
   }
 
   ngOnChanges(){

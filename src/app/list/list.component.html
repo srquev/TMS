@@ -5,7 +5,10 @@
     <div class="modal-content">
         <div class="modal-header">
             <div class="emp-name-heading">{{currentEmployeeData?.name}}</div>
-        <div class="close" (click)="actionBtn('cross')"> &times;</div>
+        <div class="btn-container">
+            <div style="padding-right: 20px;"> <button class="update-btn" (click)="updateData()">Update</button> </div>
+            <div class="close" (click)="actionBtn('cross')"> &times;</div>
+        </div>
         </div>
 
         <div *ngIf="currentEmployeeData?.task?.length; else noDataFound" class="table-container">

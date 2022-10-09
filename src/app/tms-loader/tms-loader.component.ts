@@ -25,12 +25,30 @@ genders=['male','female'];
 
   onSubmit(form: FormGroup) {
     console.log(form);
+    console.log(this.myForm);
     
   }
 
   onAddHobby(){
     const control= new FormControl(null,Validators.required);
     (<FormArray>this.myForm.get('hobbies')).push(control);
+  }
+
+  updateForm(){
+    /**
+     **this.myForm.setValue({
+      name:'Jamal_Sharique',
+      email: 'sharique.jamal@outlook.com',
+      message: 'Angular Developer',
+      gender: 'male',
+      hobbies: []
+    })
+     */
+    this.myForm.patchValue({
+      name: 'Jamal_Sharique',
+      gender: 'male'
+    })
+ 
   }
 
 }

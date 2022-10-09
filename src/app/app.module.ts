@@ -9,6 +9,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AuthGuard } from './auth.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListPopupComponent } from './list/list.component';
+import { TmsResolverService } from './tms-resolver.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ListPopupComponent } from './list/list.component';
       useClass: AuthInterceptor,
       multi: true
     },
-    AuthGuard
+    AuthGuard,
+    TmsResolverService
   ],
   bootstrap: [AppComponent]
 })

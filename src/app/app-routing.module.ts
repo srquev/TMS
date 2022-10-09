@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { TmsLoaderComponent } from './tms-loader/tms-loader.component';
+import { TmsResolverService } from './tms-resolver.service';
 import { UnassignedComponent } from './unassigned/unassigned.component';
 
 
@@ -15,7 +16,10 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [AuthGuard]
   },
-  { path: 'employee', component: EmployeeComponent },
+  { path: 'employee', 
+    component: EmployeeComponent ,
+    resolve: {someData: TmsResolverService}
+},
   { path: 'assigned', component: AssignedComponent },
   { path: 'unassigned', component: UnassignedComponent },
   { path: 'dashboard', component: DashboardComponent },

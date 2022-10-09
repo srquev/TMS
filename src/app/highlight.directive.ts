@@ -33,7 +33,7 @@ import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 export class HighlightDirective {
   @Input() appHighlight:string = '';
-  constructor(private el : ElementRef){}
+  constructor(public el : ElementRef){}
 
   @HostListener('mouseenter') onHover(){
     this.highlight(this.appHighlight,'mouseenter')

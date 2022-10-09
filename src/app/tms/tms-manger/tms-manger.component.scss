@@ -1,0 +1,25 @@
+.update-btn{
+    padding: 2px 4px;
+    outline: none;
+    border: noe;
+    border: none;
+    background: none;
+    color: #2b4980;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /*
+  * centring a div
+  */
+
+  .parent{
+    border:1px solid rgb(63, 101, 45);
+    min-height: 500px;
+  }
+
+  .child{
+    padding: 20px;
+    border: 5px solid grey;
+  }

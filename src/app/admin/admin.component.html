@@ -1,4 +1,4 @@
-<div class="main-admin" *ngIf="!showLoader; else spinner">
+<div class="main-admin" *ngIf="!showLoader; else spinner" >
 
     <div class="create-container">
         <div class="create-box">
@@ -83,10 +83,14 @@
 
 
 <!--child component popup-->
-<app-list-popup 
+<app-list-popup  #popupRef 
 [showPopup]="showPopup" 
 [currentEmployeeData]="currentEmployeeData"
 (popupState)="popupState($event)"
 >
 </app-list-popup>
+
+<div >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore similique beatae velit obcaecati temporibus omnis placeat quia, totam libero maiores, natus inventore illo iste impedit, modi aperiam corrupti laborum architecto.
+</div>
 

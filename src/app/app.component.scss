@@ -1,33 +1,39 @@
 // :host { margin: 0; }
-.outer{
+.outer {
   padding: 0 20px;
+  overflow: scroll;
+  max-height: calc(100vh - 10px);
 }
 
-.tabs-comp-name{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #28586c;
-    color: #fff;
-    font-weight: 600;
-    font-size: 18px;
-    overflow: hidden;
+.tabs-comp-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #28586c;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  overflow: hidden;
 }
-  .active{
-    background-color: #436b6c;
-  }
-  
-  .tabs{
-    display: flex;
-    justify-content: flex-start;
-  }
-  .tab{
-    padding: 10px;
-    cursor: pointer;
-  }
 
-  .tab:hover{
-    background-color: rgb(38, 38, 38);
-  }
+.active {
+  background-color: #436b6c;
+}
 
-  .app-name{padding-right: 20px;}
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: rgb(38, 38, 38);
+}
+
+.app-name {
+  padding-right: 20px;
+}

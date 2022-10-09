@@ -1,3 +1,16 @@
+
+<div>
+
+<div>
+    <div style="padding: 20px 20px 0 0;"> <button class="update-btn" (click)="updateCarProperty()">Update Color:Change Detection Example</button> </div>
+</div>
+
+    <div>
+        <app-security [wagons]= "cars"></app-security>
+    </div>
+</div>
+
+
 <div>
     <h2>Iron Man</h2>
     <p>Iron Man is a 2008 American superhero film based on the Marvel Comics character of the same name. Produced by
@@ -25,4 +38,20 @@
         best films of 2008 and received two nominations at the 81st Academy Awards for Best Sound Editing and Best
         Visual Effects. Two sequels have been released: Iron Man 2 (2010) and Iron Man 3 (2013).</p>
 </div>
-<p>tms-manger works!</p>
+
+
+<!-- <div class="parent">
+    <div class="child"></div>
+</div> -->
+
+
+<div>
+    <h3>trackBy Example</h3>
+    <div>
+        <ng-container *ngFor="let animal of animals; trackBy:trackByfn">
+            <li>{{animal.name}}</li>
+        </ng-container>
+    </div>
+
+    <p><button (click)="addAnimal()">Add Animal</button></p>
+</div>
