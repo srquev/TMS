@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, PreloadAllModules, Resolve, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Resolve } from '@angular/router';
+import { Observable, Subscriber } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +22,9 @@ export class TmsResolverService implements Resolve<Observable<IData>> {
     // })
 
 
-    return new Observable((observer)=>{
+    return new Observable((observer: Subscriber<IData>)=>{
       setTimeout(()=>{
-        const info = {msg:'this data is emitted from resolve service after 3 sec when you clicked on employee tab', userId: 8919257903}
+        const info = {msg:'this data is emitted from TmsResolverService after 3 sec when you clicked on employee tab', userId: 8919257903}
         if(info.userId === 8919257903){
           observer.next(info);
           observer.complete();
